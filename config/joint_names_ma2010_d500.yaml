@@ -1,0 +1,1 @@
+controller_joint_names: ['ma2010_joint_1_s', 'ma2010_joint_2_l', 'ma2010_joint_3_u', 'ma2010_joint_4_r', 'ma2010_joint_5_b', 'ma2010_joint_6_t', 'd500_joint_1', 'd500_joint_2']
