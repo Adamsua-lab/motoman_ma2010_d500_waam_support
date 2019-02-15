@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(motoman_ma2010_motopos_d500_support)
+project(motoman_ma2010_d500_waam_support)
 
 find_package(catkin REQUIRED)
 
