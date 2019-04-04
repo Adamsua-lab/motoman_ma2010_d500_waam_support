@@ -42,7 +42,7 @@
       <material name="grey"/>
     </visual>
     <collision>
-      <origin xyz="-0.85 -1.35 0" rpy="${pi/2} 0 ${pi/2}"/>
+      <origin xyz="-0.85 -1.25 0" rpy="${pi/2} 0 ${pi/2}"/>
       <geometry>
         <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/floor_slab_m.stl"/>
       </geometry>
