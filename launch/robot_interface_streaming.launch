@@ -1,0 +1,23 @@
+<!--
+  Manipulator specific version of 'robot_interface_streaming.launch'.
+
+  Defaults provided for sia5d:
+   - 7 joints
+
+  Usage:
+    robot_interface_streaming_sia5d.launch robot_ip:=<value> controller:=<fs100|dx100>
+-->
+<launch>
+  <arg name="robot_ip" doc="IP of controller" />
+
+  <!-- controller: Controller name (fs100 or dx100) -->
+  <arg name="controller" doc="Series of the controller (dx100, dx200, fs100 or yrc1000)" />
+
+  <rosparam command="load" file="$(find motoman_ma2010_d500_waam_support)/config/ma2010_d500_motion_interface.yaml" />
+
+  <rosparam command="load" file="$(find motoman_ma2010_d500_waam_support)/config/joint_names_ma2010_d500.yaml" />
+
+  <include file="$(find motoman_driver)/launch/robot_multigroup_interface_streaming_$(arg controller).launch">
+    <arg name="robot_ip"   value="$(arg robot_ip)" />
+  </include>
+</launch>
