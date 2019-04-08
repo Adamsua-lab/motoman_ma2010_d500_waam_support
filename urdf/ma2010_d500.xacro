@@ -47,10 +47,24 @@
         <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/floor_slab_m.stl"/>
       </geometry>
     </collision>
+    <!-- positioner base plate -->
+    <visual>
+      <origin xyz="0.85 -0.4 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/base_plate_positioner_m.stl"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0.85 -0.4 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/base_plate_positioner_m.stl"/>
+      </geometry>
+    </collision>
   </link>
 
   <joint name="d500_base_link-world" type="fixed">
-    <origin xyz="1.35 0 0" rpy="0 0 -${pi/2}"/>
+    <origin xyz="1.35 0 0.032" rpy="0 0 -${pi/2}"/>
     <parent link="world"/>
     <child link="d500_base_link"/>
   </joint>
