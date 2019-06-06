@@ -123,4 +123,10 @@
     <child link="ma2010_tool_tip_ang" />
     <origin xyz="0 0 0" rpy="0 -0.91 0"/>
   </joint>
+  <link name="ma2010_tcp" />
+  <joint name="ma2010_tool_tip_ang-ma2010_tcp" type="fixed">
+    <parent link="ma2010_tool_tip_ang" />
+    <child link="ma2010_tcp" />
+    <origin xyz="0 0 -0.015" rpy="0 0 0"/>
+  </joint>
 </robot>
