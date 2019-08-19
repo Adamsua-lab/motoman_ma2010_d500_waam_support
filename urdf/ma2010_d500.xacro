@@ -102,14 +102,14 @@
       <!--<origin xyz="-0.100 0.042 -0.050" rpy="${pi/2} 0.38 0"/>-->
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/RA_5000_22g.stl"/>
+        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/ra_5000_22g.stl"/>
       </geometry>
       <material name="grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/RA_5000_22g.stl"/>
+        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/ra_5000_22g.stl"/>
       </geometry>
     </collision>
   </link>
