@@ -64,7 +64,8 @@
   </link>
 
   <joint name="d500_base_link-world" type="fixed">
-    <origin xyz="1.365256 0 0.032" rpy="0 0 -${pi/2}"/>
+    <!--<origin xyz="1.373 0.0 0.032" rpy="0 0 -${pi/2}"/>-->
+    <origin xyz="1.348 -0.0015 0.032" rpy="0 0 -${pi/2}"/>
     <parent link="world"/>
     <child link="d500_base_link"/>
   </joint>
@@ -75,25 +76,25 @@
   </joint>
 
   <!-- Substrate plate on the positioner -->
-  <link name="d500_sub_plate">
+  <link name="d500_fix_plate">
     <visual>
-      <origin xyz="-0.25 -0.25 -0.049"/>
+      <origin xyz="-0.25 -0.25 -0.063"/>
       <geometry>
-        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/substrate_plate_temp_m.stl"/>
+        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/fixture_plate_m.stl"/>
       </geometry>
       <material name="grey"/>
     </visual>
     <collision>
-      <origin xyz="-0.25 -0.25 -0.049"/>
+      <origin xyz="-0.25 -0.25 -0.063"/>
       <geometry>
-        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/substrate_plate_temp_m.stl"/>
+        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/fixture_plate_m.stl"/>
       </geometry>
     </collision>
   </link>
-  <joint name="d500_tool0-d500_sub_plate" type="fixed">
+  <joint name="d500_tool0-d500_fix_plate" type="fixed">
     <parent link="d500_tool0" />
-    <child link="d500_sub_plate" />
-    <origin xyz="0 0 0.049" rpy="0 0 ${pi/2}"/>
+    <child link="d500_fix_plate" />
+    <origin xyz="0 0 0.063" rpy="0 0 ${pi/2}"/>
   </joint>
 
   <!-- Tool (torch) -->
@@ -102,14 +103,14 @@
       <!--<origin xyz="-0.100 0.042 -0.050" rpy="${pi/2} 0.38 0"/>-->
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/ra_5000_22g.stl"/>
+        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/RA_5000_22g_7.5degree_fix.STL"/>
       </geometry>
       <material name="grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/ra_5000_22g.stl"/>
+        <mesh filename="package://motoman_ma2010_d500_waam_support/meshes/RA_5000_22g_7.5degree_fix.STL"/>
       </geometry>
     </collision>
   </link>
@@ -122,18 +123,12 @@
   <joint name="ma2010_tool0-ma2010_tool_tip" type="fixed">
     <parent link="ma2010_torch" />
     <child link="ma2010_tool_tip" />
-    <origin xyz="0.4754 0 0" rpy="0 0 0"/>
-  </joint>
-  <link name="ma2010_tool_tip_ang" />
-  <joint name="ma2010_tool0-ma2010_tool_tip_ang" type="fixed">
-    <parent link="ma2010_tool_tip" />
-    <child link="ma2010_tool_tip_ang" />
-    <origin xyz="0 0 0" rpy="0 -0.91 0"/>
+    <origin xyz="0.46374 0 -0.01518" rpy="0 0 0"/>
   </joint>
   <link name="ma2010_tcp" />
-  <joint name="ma2010_tool_tip_ang-ma2010_tcp" type="fixed">
-    <parent link="ma2010_tool_tip_ang" />
+  <joint name="ma2010_tool0-ma2010_tcp" type="fixed">
+    <parent link="ma2010_tool_tip" />
     <child link="ma2010_tcp" />
-    <origin xyz="0 0 -0.015" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 -0.777 0"/>
   </joint>
 </robot>
